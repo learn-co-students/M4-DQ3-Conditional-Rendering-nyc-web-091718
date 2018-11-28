@@ -4,7 +4,7 @@ const MenuBar = (props) => {
 
   /*
 
-  The 'a' tags below are the menu items. Think about the way a menu 
+  The 'a' tags below are the menu items. Think about the way a menu
   should work. When you click a menu item, the button typically becomes
   'active' to indicate that it is currently selected. How could we achieve
   this programatically? What other behavior do we expect when we click
@@ -15,19 +15,19 @@ const MenuBar = (props) => {
 
   return (
     <div className="ui four item menu">
-      <a className="item active" id="profile">
+      <a className={props.selectedItem === 'profile' ? "item active" : "item"} id="profile"  onClick={props.handleclick}>
         <i className="user large icon" id="profile"/>
       </a>
 
-      <a className="item" id="photo">
+      <a className={props.selectedItem === 'photo' ? "item active" : "item"} id="photo" onClick={props.handleclick}>
         <i className="photo large icon" id="photo"/>
       </a>
 
-      <a className="item" id="cocktail">
+      <a className={props.selectedItem === 'cocktail' ? "item active" : "item"} id="cocktail"  onClick={props.handleclick}>
         <i className="cocktail large icon" id="cocktail"/>
       </a>
 
-      <a className="item" id="pokemon"> 
+      <a className={props.selectedItem === 'pokemon' ? "item active" : "item"} id="pokemon"  onClick={props.handleclick}>
         <i className=" themeisle large icon" id="pokemon"/>
       </a>
     </div>
