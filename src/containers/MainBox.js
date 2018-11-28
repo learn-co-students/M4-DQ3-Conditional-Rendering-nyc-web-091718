@@ -8,11 +8,6 @@ class MainBox extends React.Component {
   }
 
   handleClick = (event) => {
-    if (event.target.className === 'item') {
-      event.target.className = 'item active'
-    } else {
-       event.target.parentElement.className = 'item active'
-    }
     this.setState({
       currentMenuId: event.target.id
     })
@@ -35,7 +30,7 @@ class MainBox extends React.Component {
   render() {
     return (
       <div>
-        <MenuBar onClick={this.handleClick} />
+        <MenuBar selected={this.state.currentMenuId} onClick={this.handleClick} />
         <div>{this.selectedDetails()}</div>
       </div>
     )
